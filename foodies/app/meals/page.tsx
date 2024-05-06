@@ -3,6 +3,10 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import MealsGrid from '@/components/meals/meals-grid';
 import { getMeals } from '@/lib/meals';
+import { Meal } from '@/types/meals';
+export const metadata = {
+    title: 'all meals',
+};
 
 const MealsPage = () => {
     return (
@@ -27,7 +31,7 @@ const MealsPage = () => {
 };
 
 const Meals = async () => {
-    const meals = await getMeals();
+    const meals: Meal[] = await getMeals();
     return (
         <>
             <MealsGrid meals={meals} />

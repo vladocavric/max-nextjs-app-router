@@ -6,11 +6,12 @@ import xss from 'xss';
 
 const db = sql('meals.db');
 
-export const getMeals = async () => {
+export const getMeals = async (): Promise<Meal[]> => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     // throw new Error("something went wrong");
 
-    return db.prepare('SELECT * FROM meals').all();
+    const meals = db.prepare('SELECT * FROM meals').all() as Meal[];
+    return meals
 };
 
 export const getOneMeal = async (slug: string): Promise<Meal> => {

@@ -8,11 +8,24 @@ import { Meal } from '@/types/meals';
 
 import styles from './page.module.scss';
 
-const MealsDetailsPage = async ({ params }: { params: { slug: string } }) => {
+export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
     const meal: Meal = await getOneMeal(params.slug);
 
     if (!meal) {
         notFound();
+    }
+
+    return {
+        title: meal.title,
+        description: meal.summary,
+    };
+};
+
+const MealsDetailsPage = async ({ params }: { params: { slug: string } }) => {
+    const meal: Meal = await getOneMeal(params.slug);
+
+    if (!meal) {
+        return;
     }
 
     let { title, image, summary, instructions, creator, creator_email } = meal;
