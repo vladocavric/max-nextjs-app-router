@@ -1,3 +1,4 @@
+import MainHeader from '@/components/header/main-header';
 import './globals.scss';
 
 export const metadata = {
@@ -8,7 +9,12 @@ export const metadata = {
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <html lang='en'>
-            <body>{children}</body>
+            <body>
+                <div id='page'>
+                    <MainHeader />
+                    {children}
+                </div>
+            </body>
         </html>
     );
 };

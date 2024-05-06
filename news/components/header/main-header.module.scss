@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    border-radius: 4px;
+}
+
+.header .logo a,
+.header .logo a:hover {
+    color: #e1e1d7;
+    text-decoration: none;
+}
+
+.header ul {
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+}
