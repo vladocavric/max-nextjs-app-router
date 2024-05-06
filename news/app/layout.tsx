@@ -1,20 +1,16 @@
-import "./globals.css";
-
-
+import './globals.scss';
 
 export const metadata = {
-  title: 'Next.js Page Routing & Rendering',
-  description: 'Learn how to route to different pages.',
-}
+    title: 'Next.js Page Routing & Rendering',
+    description: 'Learn how to route to different pages.',
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+    return (
+        <html lang='en'>
+            <body>{children}</body>
+        </html>
+    );
+};
+
+export default RootLayout;
