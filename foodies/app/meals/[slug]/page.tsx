@@ -22,7 +22,7 @@ const MealsDetailsPage = async ({ params }: { params: { slug: string } }) => {
         <>
             <header className={styles.header}>
                 <div className={styles.image}>
-                    <Image src={image} alt={title} fill />
+                    <Image src={image} alt={title} fill sizes='100%' />
                 </div>
                 <div className={styles.headerText}>
                     <h1>{title}</h1>

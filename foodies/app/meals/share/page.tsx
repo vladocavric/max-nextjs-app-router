@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './page.module.scss';
 import ImagePicker from '@/components/meals/image-picker';
+import { shareMeal } from '@/lib/actions';
 
 const ShareMealsPage = () => {
     return (
@@ -12,7 +13,7 @@ const ShareMealsPage = () => {
                 <p>Or any other meal you feel needs sharing!</p>
             </header>
             <main className={styles.main}>
-                <form className={styles.form}>
+                <form className={styles.form} action={shareMeal}>
                     <div className={styles.row}>
                         <p>
                             <label htmlFor='name'>Your name</label>
@@ -33,9 +34,9 @@ const ShareMealsPage = () => {
                     </p>
                     <p>
                         <label htmlFor='instructions'>Instructions</label>
-                        <textarea id='instructions' name='instructions' rows='10' required></textarea>
+                        <textarea id='instructions' name='instructions' rows={10} required></textarea>
                     </p>
-                    <ImagePicker label={''} name={'image'} />
+                    <ImagePicker label={'Your image'} name={'image'} />
                     <p className={styles.actions}>
                         <button type='submit'>Share Meal</button>
                     </p>

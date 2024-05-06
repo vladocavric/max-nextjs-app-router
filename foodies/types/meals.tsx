@@ -1,8 +1,8 @@
 export type Meal = {
-    id: string;
+    id?: string;
     title: string;
-    slug: string;
-    image: string;
+    slug?: string;
+    image: any;
     summary: string;
     creator: string;
     instructions?: string;

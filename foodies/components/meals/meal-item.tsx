@@ -9,7 +9,7 @@ const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
         <article className={styles.meal}>
             <header>
                 <div className={styles.image}>
-                    <Image src={image} alt={title} fill />
+                    <Image src={image} alt={title} fill sizes='100%' />
                 </div>
                 <div className={styles.headerText}>
                     <h2>{title}</h2>
