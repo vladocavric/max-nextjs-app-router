@@ -1,8 +1,8 @@
 import MainHeader from '@/components/header/main-header';
-import './globals.scss';
+import '../globals.scss';
 
 export const metadata = {
-    title: 'Next.js Page Routing & Rendering',
+    title: 'content - Next.js Page Routing & Rendering',
     description: 'Learn how to route to different pages.',
 };
 

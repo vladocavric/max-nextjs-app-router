@@ -5,6 +5,10 @@ import styles from './main-header.module.scss';
 
 const nav = [
     {
+        label: 'Archive',
+        href: '/archive',
+    },
+    {
         label: 'News',
         href: '/news',
     },
