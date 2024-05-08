@@ -1,5 +1,5 @@
 {
-  "name": "news",
+  "name": "mutating-data",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,11 @@
   "dependencies": {
     "@types/better-sqlite3": "^7.6.10",
     "better-sqlite3": "^9.6.0",
+    "cloudinary": "^2.2.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.76.0"
+    "sass": "^1.77.0"
   },
   "devDependencies": {
     "@types/node": "^20",

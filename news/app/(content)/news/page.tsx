@@ -1,13 +1,23 @@
 import React from 'react';
 
-import { DUMMY_NEWS } from '@/dummy-news';
 import NewsList from '@/components/news/news-list';
+import { getAllNewsFromDB } from '@/lib/news';
 
-const NewsPage = () => {
+const NewsPage = async () => {
+    // const response = await fetch('http://localhost:8080/news');
+
+    // if (!response.ok) {
+    //     throw new Error('failed to fetch data');
+    // }
+
+    // const news = await response.json();
+
+    const news = await getAllNewsFromDB();
+
     return (
         <>
             <h1>News Page</h1>
-            <NewsList newsList={DUMMY_NEWS} />
+            {news && <NewsList newsList={news} />}
         </>
     );
 };

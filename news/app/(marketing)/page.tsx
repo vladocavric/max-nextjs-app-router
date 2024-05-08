@@ -22,6 +22,9 @@ export default function Home() {
             <p>
                 <Link href='/news'>Read the latest news</Link>
             </p>
+            <p>
+                <Link href='/archive'>Read archive</Link>
+            </p>
         </div>
     );
 }

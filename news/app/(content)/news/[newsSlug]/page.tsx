@@ -1,12 +1,13 @@
 import React from 'react';
 import { DUMMY_NEWS } from '@/dummy-news';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
+import { getNewsItemFromDB } from '@/lib/news';
 
-export const generateMetadata = ({ params }: { params: { newsSlug: string } }) => {
+export const generateMetadata = async ({ params }: { params: { newsSlug: string } }) => {
     const newsSlug = params.newsSlug;
-    const news = DUMMY_NEWS.find(news => newsSlug === news.slug);
+    // const news = DUMMY_NEWS.find(news => newsSlug === news.slug);
+    const news = await getNewsItemFromDB(newsSlug);
     if (!news) {
         notFound();
     }
@@ -17,9 +18,10 @@ export const generateMetadata = ({ params }: { params: { newsSlug: string } }) =
     };
 };
 
-const NewsDetailsPage = ({ params }: { params: { newsSlug: string } }) => {
+const NewsDetailsPage = async ({ params }: { params: { newsSlug: string } }) => {
     const newsSlug = params.newsSlug;
-    const news = DUMMY_NEWS.find(news => newsSlug === news.slug);
+    // const news = DUMMY_NEWS.find(news => newsSlug === news.slug);
+    const news = await getNewsItemFromDB(newsSlug);
 
     if (!news) {
         return;
