@@ -1,9 +1,21 @@
+
+import Header from '@/components/header';
+import { verifyAuth } from '@/lib/auth';
 import { getTrainings } from '@/lib/training';
+import { redirect } from 'next/navigation';
+
 
 export default async function TrainingPage() {
+  const result = await verifyAuth()
+
+  if(!result.user) {
+    return redirect('/')
+  }
   const trainingSessions = getTrainings();
 
   return (
+    <>
+    <Header />
     <main>
       <h1>Find your favorite activity</h1>
       <ul id="training-sessions">
@@ -18,5 +30,6 @@ export default async function TrainingPage() {
         ))}
       </ul>
     </main>
+    </>
   );
 }
